@@ -1,14 +1,36 @@
 import React from "react";
+import styled from "styled-components";
 
-function Task(props) {
+const TaskWrapper = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+const Label = styled.label`
+  cursor: pointer;
+  user-select: none;
+  text-decoration: ${props => props.active ? "line-through" : "none"};
+`
+
+const Input = styled.input`
+
+`
+
+const Button = styled.button`
+  cursor: pointer;
+`
+
+function Task({id, active, name, toggleActive, removeTask}) {
     return (
-        <div className="task-list-item">
-            <label className={["task-list-item-label", props.active && "completed"].join(' ')}>
-                <input type="checkbox" checked={props.active} onChange={() => props.toggleActive(props.id)}/>
-                {props.name}
-            </label>
-            <button onClick={() => props.removeTask(props.id)}>X</button>
-        </div>
+        <TaskWrapper>
+            <Label active={active}>
+                <Input type="checkbox" checked={active} onChange={() => toggleActive(id)}/>
+                {name}
+            </Label>
+            <Button onClick={() => removeTask(id)}>X</Button>
+        </TaskWrapper>
     )
 }
 

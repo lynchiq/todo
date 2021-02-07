@@ -2,6 +2,32 @@ import React, {useState} from "react";
 import Task from "./Task";
 import TaskCreateForm from "./TaskCreateForm";
 
+import styled from "styled-components";
+
+const Container = styled.div`
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+`
+
+const TasksWrapper = styled.div`
+  margin-top: 20px;
+  padding: 15px 30px;
+  width: 800px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 4px 5px 20px 0 #afafaf;
+`
+
+const TasksTitle = styled.h1`
+  text-align: center;
+`
+
+const TasksList = styled.div`
+  margin-top: 40px;
+`
+
 function Tasks() {
 
     let [tasks, setTasks] = useState([
@@ -49,15 +75,15 @@ function Tasks() {
     })
 
     return (
-        <div className="container">
-            <div className="task-list">
-                <h1 className="task-list-title">Список задач</h1>
+        <Container>
+            <TasksWrapper>
+                <TasksTitle>Список задач</TasksTitle>
                 <TaskCreateForm addTask={addTask}/>
-                <div className="task-list-items">
+                <TasksList>
                     {tasksList}
-                </div>
-            </div>
-        </div>
+                </TasksList>
+            </TasksWrapper>
+        </Container>
     )
 }
 

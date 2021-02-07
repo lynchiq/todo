@@ -5,6 +5,8 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    background-color: #e4e9fd;
 }
 
 code {
@@ -23,8 +25,9 @@ code {
     margin-top: 20px;
     padding: 15px 30px;
     width: 800px;
-    border: 1px solid #ccc;
     border-radius: 10px;
+    background: #fff;
+    box-shadow: 4px 5px 20px 0 #afafaf;
 }
 
 .task-list-title{
@@ -32,14 +35,11 @@ code {
 }
 
 .task-list-form{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
 }
 
 .task-list-input{
-    flex-grow: 1;
-    height: 20px;
+
 }
 
 .task-list-btn{
