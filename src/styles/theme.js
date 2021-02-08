@@ -11,8 +11,8 @@ const theme = {
     },
     colors: {
         default: {
-            default: "#007bff",
-            hover: "#0069d9"
+            default: "#6c757d",
+            hover: "#6c757d"
         },
         primary: {
             default: "#007bff",

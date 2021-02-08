@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {WarningButton} from "./button";
 import {Checkbox} from "./checkbox";
 
-const TaskWrapper = styled.div`
+const StyledTaskItem = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -11,11 +11,16 @@ const TaskWrapper = styled.div`
 `
 
 const TaskItem = ({id, isActive, name, toggleIsActive, removeTask}) => {
+
+    let handleCheckboxChange = () => {
+        toggleIsActive(id)
+    }
+
     return (
-        <TaskWrapper>
-            <Checkbox id={id} checked={isActive} onChange={toggleIsActive}/>
+        <StyledTaskItem>
+            <Checkbox label={name} checked={isActive} onChange={handleCheckboxChange}/>
             <WarningButton onClick={() => removeTask(id)}>Удалить</WarningButton>
-        </TaskWrapper>
+        </StyledTaskItem>
     )
 }
 

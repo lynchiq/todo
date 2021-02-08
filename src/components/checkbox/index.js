@@ -1,14 +1,21 @@
 import styled from 'styled-components'
 
 const CheckboxContainer = styled.div`
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
 `
 
 const Icon = styled.svg`
   fill: none;
   stroke: white;
   stroke-width: 2px;
+`
+
+const Label = styled.label`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none;
 `
 
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
@@ -27,9 +34,10 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 const StyledCheckbox = styled.div`
   cursor:pointer;
   display: inline-block;
+  margin-right: 5px;
   width: 16px;
   height: 16px;
-  background: ${props => (props.checked ? 'salmon' : 'papayawhip')};
+  background: ${props => (props.checked ? props.theme.colors.warning.default : props.theme.colors.default.default)};
   border-radius: 3px;
   transition: all 150ms;
 
@@ -42,16 +50,19 @@ const StyledCheckbox = styled.div`
   }
 `
 
-export const Checkbox = ({checked, ...props }) => {
+export const Checkbox = ({label, checked, ...props }) => {
     return (
         (
             <CheckboxContainer>
-                <HiddenCheckbox checked={checked} {...props} />
-                <StyledCheckbox checked={checked}>
-                    <Icon viewBox="0 0 24 24">
-                        <polyline points="20 6 9 17 4 12" />
-                    </Icon>
-                </StyledCheckbox>
+                <Label>
+                    <StyledCheckbox checked={checked}>
+                        <Icon viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </Icon>
+                    </StyledCheckbox>
+                    <HiddenCheckbox checked={checked} {...props} />
+                    {label}
+                </Label>
             </CheckboxContainer>
         )
     )
