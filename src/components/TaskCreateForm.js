@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
+import {PrimaryButton} from "./button";
 
 const Form = styled.form`
   display: flex;
@@ -7,26 +8,7 @@ const Form = styled.form`
   align-items: center;
 `
 
-const Input = styled.input`
-  flex-grow: 1;
-  height: 20px;
-`
-
-const Button = styled.button`
-  cursor: pointer;
-  display: block;
-  margin-left: 10px;
-  flex-grow: 0.1;
-  height: 40px;
-  background: #7c73ff;
-  border: none;
-  border-radius: 10px;
-  font-size: 24px;
-  :hover {
-    background: #443bcc;
-    color: #fff;
-  }
-`
+const Input = styled.input``
 
 function TaskCreateForm({addTask}) {
     let [name, setName] = useState('');
@@ -42,8 +24,8 @@ function TaskCreateForm({addTask}) {
 
     return (
         <Form onSubmit={(e) => handleSubmit(e)}>
-            <Input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
-            <Button>+</Button>
+            <Input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder={"Введите название задачи"}/>
+            <PrimaryButton>Добавить</PrimaryButton>
         </Form>
     )
 }
