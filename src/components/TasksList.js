@@ -67,9 +67,17 @@ function TasksList() {
         }))
     }
 
+    const renameTask = (id, name) => {
+        setTasks(tasks.map(task =>
+            task.id === id
+                ? {...task, name: name}
+                : task
+        ))
+    }
+
     let tasksList = tasks.map((task) => {
         return (
-            <TaskItem key={task.id} id={task.id} isActive={task.isActive} name={task.name} toggleIsActive={toggleIsActive} removeTask={removeTask}/>
+            <TaskItem key={task.id} id={task.id} isActive={task.isActive} name={task.name} toggleIsActive={toggleIsActive} removeTask={removeTask} renameTask={renameTask}/>
         )
     })
 

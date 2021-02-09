@@ -34,3 +34,12 @@ export const StyledWarningButton = styled(StyledButton)`
     background: ${props => props.theme.colors.warning.hover};
   }
 `
+
+export const StyledSuccessButton = styled(StyledButton)`
+  color: ${props => props.theme.text.reverse};
+  background: ${props => props.theme.colors.success.default};
+
+  &:hover {
+    background: ${props => props.theme.colors.success.hover};
+  }
+`

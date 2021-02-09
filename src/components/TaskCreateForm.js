@@ -1,21 +1,22 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
-import {PrimaryButton} from "./button";
+import {PrimaryButton} from "../common/Button";
+import {Input} from "../common/Input";
 
-const Form = styled.form`
+const Row = styled.form`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `
 
-const Input = styled.input``
+const StyledButtonContainer = styled.div`
+    margin-left: 10px;
+`
 
 function TaskCreateForm({addTask}) {
     let [name, setName] = useState('');
 
-    function handleSubmit(e) {
-        e.preventDefault()
-
+    function handleClick() {
         if (name.replace(/\s/g, '') !== '') {
             addTask(name)
             setName('')
@@ -23,10 +24,12 @@ function TaskCreateForm({addTask}) {
     }
 
     return (
-        <Form onSubmit={(e) => handleSubmit(e)}>
+        <Row>
             <Input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder={"Введите название задачи"}/>
-            <PrimaryButton>Добавить</PrimaryButton>
-        </Form>
+            <StyledButtonContainer>
+                <PrimaryButton onClick={() => handleClick()}>Добавить</PrimaryButton>
+            </StyledButtonContainer>
+        </Row>
     )
 }
 
