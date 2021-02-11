@@ -1,9 +1,9 @@
 import React from 'react';
-import TasksList from "./components/TasksList";
+import Tasks from "./components/Tasks";
 
 function App() {
     return (
-        <TasksList/>
+        <Tasks/>
     )
 }
 

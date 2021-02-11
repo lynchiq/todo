@@ -16,18 +16,17 @@ const StyledButtonContainer = styled.div`
 function TaskCreateForm({addTask}) {
     let [name, setName] = useState('');
 
-    function handleClick() {
-        if (name.replace(/\s/g, '') !== '') {
-            addTask(name)
-            setName('')
-        }
+    const hi = (e) => {
+        e.preventDefault()
+        addTask(name)
+        setName('')
     }
 
     return (
         <Row>
             <Input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder={"Введите название задачи"}/>
             <StyledButtonContainer>
-                <PrimaryButton onClick={() => handleClick()}>Добавить</PrimaryButton>
+                <PrimaryButton onClick={(e) => hi(e)}>Добавить</PrimaryButton>
             </StyledButtonContainer>
         </Row>
     )

@@ -2,13 +2,13 @@ import {StyledButton, StyledPrimaryButton, StyledSuccessButton, StyledWarningBut
 
 export const Button = ({children, onClick}) => {
     return (
-        <StyledButton onClick={() => onClick()}>{children}</StyledButton>
+        <StyledButton onClick={onClick}>{children}</StyledButton>
     )
 }
 
 export const PrimaryButton = ({children, onClick}) => {
     return (
-        <StyledPrimaryButton onClick={() => onClick()}>{children}</StyledPrimaryButton>
+        <StyledPrimaryButton onClick={onClick}>{children}</StyledPrimaryButton>
     )
 }
 
