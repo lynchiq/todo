@@ -1,0 +1,5 @@
+export const ADD_TASK = 'ADD_TASK'
+export const RENAME_TASK = 'RENAME_TASK'
+export const TOGGLE_IS_ACTIVE = 'TOGGLE_IS_ACTIVE'
+export const TOGGLE_IS_EDITING = 'TOGGLE_IS_EDITING'
+export const REMOVE_TASK = 'REMOVE_TASK'

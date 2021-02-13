@@ -1,3 +1,5 @@
+import {ADD_TASK, REMOVE_TASK, RENAME_TASK, TOGGLE_IS_ACTIVE, TOGGLE_IS_EDITING} from "../actions/types";
+
 const initialState = {
     tasks: [
         {id: 1, isActive: true, isEditing: false, name: 'Создать инпут'},
@@ -20,7 +22,7 @@ export function tasksReducer(state = initialState, action) {
     }
 
     switch (action.type) {
-        case 'ADD_TASK':
+        case ADD_TASK:
             if (!nameIsUnique(action.payload)) {
                 alert('Название должно быть уникальным')
                 return state
@@ -32,7 +34,7 @@ export function tasksReducer(state = initialState, action) {
                     createTask(action.payload)
                 ]
             }
-        case 'RENAME_TASK':
+        case RENAME_TASK:
             if (!nameIsUnique(action.payload)) {
                 alert('Название должно быть уникальным')
                 return state
@@ -45,7 +47,16 @@ export function tasksReducer(state = initialState, action) {
                         : task
                 )
             }
-        case 'TOGGLE_IS_EDITING':
+        case TOGGLE_IS_ACTIVE:
+            return {
+                ...state,
+                tasks: state.tasks.map(task =>
+                    task.id === action.payload
+                        ? {...task, isEditing: !task.isActive}
+                        : task
+                )
+            }
+        case TOGGLE_IS_EDITING:
             return {
                 ...state,
                 tasks: state.tasks.map(task =>
@@ -54,7 +65,7 @@ export function tasksReducer(state = initialState, action) {
                         : task
                 )
             }
-        case 'REMOVE_TASK':
+        case REMOVE_TASK:
             return {
                 ...state,
                 tasks: state.tasks.filter(task => {
