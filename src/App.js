@@ -1,10 +1,8 @@
-import React from 'react';
-import Tasks from "./components/Tasks";
+import React from 'react'
+import { Tasks } from './components/Tasks/Tasks'
 
 function App() {
-    return (
-        <Tasks/>
-    )
+  return <Tasks />
 }
 
-export default App;
+export default App

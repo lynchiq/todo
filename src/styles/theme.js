@@ -1,59 +1,59 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
 
 const theme = {
-    text: {
-        default: '#24292E',
-        secondary: '#384047',
-        alt: '#67717A',
-        placeholder: '#7C8894',
-        reverse: '#FFFFFF',
+  text: {
+    default: '#24292E',
+    secondary: '#384047',
+    alt: '#67717A',
+    placeholder: '#7C8894',
+    reverse: '#FFFFFF'
+  },
+  colors: {
+    default: {
+      default: '#6c757d',
+      hover: '#6c757d'
     },
-    colors: {
-        default: {
-            default: "#6c757d",
-            hover: "#6c757d"
-        },
-        primary: {
-            default: "#007bff",
-            hover: "#0069d9"
-        },
-        success: {
-            default: "#28a745",
-            hover: "#218838"
-        },
-        warning: {
-            default: "#dc3545",
-            hover: "#c82333"
-        },
+    primary: {
+      default: '#007bff',
+      hover: '#0069d9'
     },
-    fonts: ["sans-serif", "Roboto"],
-    fontSizes: {
-        small: "1em",
-        medium: "2em",
-        large: "3em"
+    success: {
+      default: '#28a745',
+      hover: '#218838'
+    },
+    warning: {
+      default: '#dc3545',
+      hover: '#c82333'
     }
-};
+  },
+  fonts: ['sans-serif', 'Roboto'],
+  fontSizes: {
+    small: '1em',
+    medium: '2em',
+    large: '3em'
+  }
+}
 
 export const variantOptions = {
-    colors: {
-        primary: {
-            default: "#007bff",
-            hover: "#0069d9"
-        },
-        success: {
-            default: "#28a745",
-            hover: "#218838"
-        },
-        warning: {
-            default: "#dc3545",
-            hover: "#dc3545"
-        },
+  colors: {
+    primary: {
+      default: '#007bff',
+      hover: '#0069d9'
     },
-};
+    success: {
+      default: '#28a745',
+      hover: '#218838'
+    },
+    warning: {
+      default: '#dc3545',
+      hover: '#dc3545'
+    }
+  }
+}
 
 const Theme = ({ children }) => (
-    <ThemeProvider theme={theme}>{children}</ThemeProvider>
-);
+  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+)
 
-export default Theme;
+export default Theme
