@@ -4,7 +4,7 @@ import {
   RENAME_TASK,
   TOGGLE_COMPLETED,
   TOGGLE_EDITING
-} from './tasks.types'
+} from './tasks.action.types'
 
 const initialState = {
   tasks: [
